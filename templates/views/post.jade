@@ -19,3 +19,12 @@ block content
 					if data.post.image.exists
 						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
 					!= data.post.content.full
+				if(data.post.file.exists)
+					hr
+					p
+						b 附件：
+						span #{data.post.file.filename}
+					p
+						b 大小：
+						span #{(data.post.file.size/1024).toFixed(2)}kb
+					a(class='btn btn-primary',href='/files/'+data.post.file.filename) 下载

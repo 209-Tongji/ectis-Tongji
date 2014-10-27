@@ -23,7 +23,7 @@ Post.add({
 		extended: {label: '详细内容', type: Types.Html, wysiwyg: true, height: 400 }
 	},
     categories: {label: '类别', type: Types.Relationship, ref: 'PostCategory', index: true,required:true,initial:true},
-    file : {label:'文件', type: Types.LocalFile,dest: '../data/files', prefix: '/files/'}
+    file : {label:'文件', type: Types.LocalFile,dest: __dirname+'/../public/files', prefix: '/files'}
 });
 
 Post.schema.virtual('content.full').get(function() {

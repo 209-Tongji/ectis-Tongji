@@ -15,10 +15,6 @@ keystone.init({
 
 	'name': '同济大学电子商务交易与信息服务协同创新中心',
 	'brand': '电子商务交易与信息服务协同创新中心',
-
-	
-
-	
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
@@ -31,7 +27,14 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': ';6%J>oH}N)d5n31l>I327!``bA/=`S$V5;,bAbxryhT8#M-<hS+>ZbPVT{-;)?JG'
+	'cookie secret': ';6%J>oH}N)d5n31l>I327!``bA/=`S$V5;,bAbxryhT8#M-<hS+>ZbPVT{-;)?JG',
+	
+	//admin ui
+	//'wysiwyg images':true,
+	'wysiwyg cloudinary images':true,
+	'wysiwyg images':true,
+	'wysiwyg additional':'blockquote fullscreen'
+	
 
 });
 

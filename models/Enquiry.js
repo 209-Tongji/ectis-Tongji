@@ -49,7 +49,7 @@ Enquiry.schema.methods.sendNotificationEmail = function(callback) {
 				name: 'tjproject',
 				email: 'contact@tjproject.com'
 			},
-			subject: 'New Enquiry for tjproject',
+			subject: '创新中心新的留言',
 			enquiry: enqiury
 		}, callback);
 		

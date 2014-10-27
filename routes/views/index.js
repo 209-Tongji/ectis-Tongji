@@ -31,7 +31,6 @@ exports = module.exports = function(req, res) {
                     .limit('6')
                     .exec(function(err, data) {
                         category.briefPosts=data;
-                        console.log(category.briefPosts);
                         next(err);
 
                     });
@@ -52,7 +51,6 @@ exports = module.exports = function(req, res) {
             }
             locals.data.galleries = result;
             next(err);
-            console.log(result);
         });
     });
 
