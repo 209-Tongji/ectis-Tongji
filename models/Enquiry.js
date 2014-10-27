@@ -9,6 +9,7 @@ var keystone = require('keystone'),
 var Enquiry = new keystone.List('Enquiry', {
 	nocreate: true,
 	noedit: true,
+	label:'留言版'
 });
 
 Enquiry.add({

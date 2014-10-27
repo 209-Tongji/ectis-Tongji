@@ -96,6 +96,16 @@ body,html{
   }
 }
 
+.container.index{
+	@media (max-width: $grid-float-breakpoint-max) {
+
+		padding-left: 0;
+		padding-right:0;
+
+	}
+	
+}
+
 .gridimages{
 
   [class*="col-"] {

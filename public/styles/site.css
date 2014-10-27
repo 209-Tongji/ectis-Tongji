@@ -5396,6 +5396,11 @@ body, html {
     text-overflow: ellipsis;
     white-space: nowrap; }
 
+@media (max-width: 767px) {
+  .container.index {
+    padding-left: 0;
+    padding-right: 0; } }
+
 .gridimages [class*="col-"] {
   padding: 0 !important;
   margin: 0 !important;
