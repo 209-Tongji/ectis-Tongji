@@ -1,0 +1,48 @@
+// Override Bootstrap variables in this file, e.g.
+$mainColor: #3e90d9;
+$font-size-base: 14px;
+$font-family-sans-serif: "Helvetica Neue","Microsoft Yahei",Helvetica, Arial, sans-serif;
+$font-family-base: "Helvetica Neue","Microsoft Yahei",Helvetica, Arial, sans-serif;
+$navbar-default-bg: transparent;
+$navbar-default-border:transparent;
+
+$navbar-border-radius:0 0 4px 4px;
+
+$font-family-default-sans-serif:"Helvetica Neue",Helvetica, Arial, sans-serif;
+
+$navbar-default-color:             #fefefe;
+$navbar-default-bg:                transparent;
+$navbar-default-border:            transparent;
+
+// Navbar links
+$navbar-default-link-color:                #efefef;
+$navbar-default-link-hover-color:          white;
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         #fefefe;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%);
+$navbar-default-link-disabled-color:       #ccc;
+$navbar-default-link-disabled-bg:          transparent;
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color;
+$navbar-default-brand-hover-color:         lighten($navbar-default-brand-color, 10%);
+$navbar-default-brand-hover-bg:            transparent;
+
+$navbar-default-toggle-hover-bg:           rgba(0,0,0,.5);
+
+$font-size-xlarge:         ceil(($font-size-base * 3.25));
+$list-group-border-radius: 12px;
+
+$defaultShadow :0 0 1px rgba(0, 0, 0, 0.12);
+$list-group-hover-bg:  lighten($mainColor,33%);
+$border-radius-base:12px;
+$input-border-radius:12px;
+
+
+$padding-base-vertical:     6px;
+$padding-base-horizontal:   15px;
+
+$link-color:darken($mainColor,35%);
+
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         48px;

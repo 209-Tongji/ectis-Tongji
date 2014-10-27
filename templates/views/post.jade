@@ -1,0 +1,21 @@
+extends ../layouts/default
+
+block content
+	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+		article
+			if !data.post
+				h2 无效的文章
+			else
+				if data.post.categories
+					p: a(href='/category/'+data.post.categories.name) &larr; #{data.post.categories.name}
+					hr
+
+				header.clearfix
+					h1.xlarge= data.post.title
+					h3.lead.text-muted.text-right
+						if data.post.publishedDate
+							| 发表于 #{data.post._.publishedDate.format('YYYY-MM-DD')}
+				.post
+					if data.post.image.exists
+						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
+					!= data.post.content.full
