@@ -13,7 +13,7 @@ var _ = require('underscore'),
 	keystone = require('keystone');
 
 var result;
-keystone.list('PostCategory').model.find().sort('-priority').select('name').exec(function(err, data) {
+keystone.list('PostCategory').model.find().sort('-priority').where('type','单独页面').select('name').exec(function(err, data) {
     result=data;
     console.log("Update Catogorieds");
 });
@@ -32,16 +32,13 @@ exports.initLocals = function(req, res, next) {
 
     locals.navLinks = [
         { label: '中心首页',	href: '/' },
-        { label: '联系我们', href: '/contact' },
-        { label: '图片集',	href: '/gallery' }
-
     ];
 
     for(var i=0;i<result.length;i++)
     {
         locals.navLinks.push({label:result[i].name ,href:'/category/'+result[i].name})
     }
-
+	locals.navLinks.push({ label: '联系我们', href: '/contact' })
 
 
 

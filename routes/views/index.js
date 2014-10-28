@@ -22,7 +22,6 @@ exports = module.exports = function(req, res) {
             }
             locals.data.categories = result;
             async.each(locals.data.categories, function(category, next) {
-                console.log(category);
                 keystone.list('Post').model.find()
                     .where('state', '已发布')
                     .sort('-publishedDate')

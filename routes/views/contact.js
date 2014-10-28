@@ -21,7 +21,7 @@ exports = module.exports = function(req, res) {
 		updater.process(req.body, {
 			flashErrors: true,
 			fields: 'name, email, phone, enquiryType, message',
-			errorMessage: 'There was a problem submitting your enquiry:'
+			errorMessage: '发送留言时出了点问题，请稍后重试:'
 		}, function(err) {
 			if (err) {
 				locals.validationErrors = err.errors;

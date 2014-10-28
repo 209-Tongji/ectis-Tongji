@@ -19,10 +19,10 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
-    'mongo': 'mongodb://localhost/dzsw',
+    'mongo': 'mongodb://localhost/tjdzsw',
 
     'emails': 'templates/emails',
-	
+	'compress':true,
 	'auto update': true,
 	'session': true,
 	'auth': true,

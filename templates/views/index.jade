@@ -7,54 +7,72 @@ mixin post(post)
 
 
 block content
-	.container.index
-		.col-md-7
+	.container-fluid.index
+		.row:.col-md-12
 			h2.colortitle
 				a(href='/gallery') 中心图片
 			.gridimages.clearfix
-				- for(var i=0;i<data.galleries.length;i=i+3){
-					.col-md-12
-						a(href=data.galleries[i].heroImage.url): .image
-							img(src=data.galleries[i].heroImage.url)
-							p #{data.galleries[i].name}
-					if data.galleries[i+1]
-						if data.galleries[i+2]
+				if(!data.galleries.length)
+					p.text-muted 暂无内容
+				else	
+					- for(var i=0;i<data.galleries.length;i=i+3){
+						if data.galleries[i+1]
 							if i%2===0
 								.col-md-7
-									a(href=data.galleries[i+1].heroImage.url): .image
-										img(src=data.galleries[i+1]._.heroImage.limit(999,240))
-										p #{data.galleries[i+1].name}
+									a(href='/gallery'): .image
+										img(src=data.galleries[i]._.heroImage.limit(847,240))
+										p #{data.galleries[i].name}
 								.col-md-5
-									a(href=data.galleries[i+2].heroImage.url): .image
-										img(src=data.galleries[i+2]._.heroImage.limit(370,240))
-										p #{data.galleries[i+2].name}
+									if data.galleries[i+2]
+										.col-md-7
+											a(href='/gallery'): .image
+												img(src=data.galleries[i+1]._.heroImage.limit(353,240))
+												p #{data.galleries[i+1].name}
+										.col-md-5
+											a(href='/gallery'): .image
+												img(src=data.galleries[i+2]._.heroImage.limit(252,240))
+												p #{data.galleries[i+2].name}
+									else
+										.col-md-12
+											a(href='/gallery'): .image
+												img(src=data.galleries[i+1]._.heroImage.limit(606,240))
+												p #{data.galleries[i+1].name}
 							else
 								.col-md-5
-									a(href=data.galleries[i+1].heroImage.url): .image
-										img(src=data.galleries[i+1]._.heroImage.limit(999,240))
-										p #{data.galleries[i+1].name}
+									if data.galleries[i+2]
+										.col-md-5
+											a(href='/gallery'): .image
+												img(src=data.galleries[i+1]._.heroImage.limit(252,240))
+												p #{data.galleries[i+1].name}
+										.col-md-7
+											a(href='/gallery'): .image
+												img(src=data.galleries[i+2]._.heroImage.limit(353,240))
+												p #{data.galleries[i+2].name}
+									else
+										.col-md-12
+											a(href='/gallery'): .image
+												img(src=data.galleries[i+1]._.heroImage.limit(606,240))
+												p #{data.galleries[i+1].name}
 								.col-md-7
-									a(href=data.galleries[i+2].heroImage.url): .image
-										img(src=data.galleries[i+2]._.heroImage.limit(370,240))
-										p #{data.galleries[i+2].name}
+									a(href='/gallery'): .image
+										img(src=data.galleries[i]._.heroImage.limit(353,240))
+										p #{data.galleries[i].name}
 						else
 							.col-md-12
-								a(href=data.galleries[i+1].heroImage.url): .image
-									img(src=data.galleries[i+1].heroImage.url)
-									p #{data.galleries[i+1].name}
+								a(href='/gallery'): .image
+									img(src=data.galleries[i]._.heroImage.limit(1117,240))
+									p #{data.galleries[i].name}
+	
+	
+					-}
 
-				-}
-			//	if datagallery.heroImage.exists
-			//		.col-sm-4.col-md-4.gallery-image: img(src=gallery._.heroImage.limit(680,680)).img-rounded
-			//		.col-sm-8.col-md-8: .row
-			//			each image in gallery.images
-			//				.col-xs-4.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
-		.col-md-5
+		.row
 			each cat in data.categories
-				h2.colortitle
-					a(href='/category/'+cat.name) #{cat.name}
-				if(!cat.briefPosts.length)
-					p.text-muted 暂无内容
-				else
-					each post in cat.briefPosts
-						+post(post)
+				.col-md-3
+					h2.colortitle
+						a(href='/category/'+cat.name) #{cat.name}
+					if(!cat.briefPosts.length)
+						p.text-muted 暂无内容
+					else
+						each post in cat.briefPosts
+							+post(post)

@@ -47,8 +47,8 @@ Enquiry.schema.methods.sendNotificationEmail = function(callback) {
 		new keystone.Email('enquiry-notification').send({
 			to: admins,
 			from: {
-				name: 'tjproject',
-				email: 'contact@tjproject.com'
+				name: '创新中心',
+				email: 'no-reply@tongji.edu.cn'
 			},
 			subject: '创新中心新的留言',
 			enquiry: enqiury
