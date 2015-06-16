@@ -13,7 +13,7 @@ exports.create = {
 	],
 	PostCategory:[
 		{name:'中心概况',priority:3,type:'单独页面',detail:'等待添加'},
-		{name:'中心简报',priority:2,type:'单独页面',detail:'等待添加'},
+		{name:'中心简报',priority:2,type:'封面下载'},
 		{name:'制度创新',priority:1,type:'单独页面',detail:'等待添加'},
 		{name:'人才培养',priority:0,type:'文档分类'},
 		{name:'中心新闻',priority:-1,type:'文档分类'},

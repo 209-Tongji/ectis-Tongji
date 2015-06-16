@@ -2,7 +2,7 @@ extends ../layouts/default
 
 block intro
 	.container
-		h1.colortitle 创新中心图片集
+		h1.colortitle-aligned 创新中心图片集
 	
 block content
 	.container
@@ -10,16 +10,20 @@ block content
 			each gallery in galleries
 				h2= gallery.name
 					if gallery.publishedDate
-						.pull-right.text-muted= gallery._.publishedDate.format('Do MMM YYYY')
+						.pull-right.text-muted= gallery._.publishedDate.format('YYYY-MM-DD')
 				
 				.row.gallery-images
-					if gallery.heroImage.exists
+					if gallery.image.exists
+						.col-sm-12.col-md-12.gallery-image: img(src='/files/images/'+gallery.image.filename).img-rounded
+					else
+						.text-muted 暂无图片
+					//-if gallery.heroImage.exists
 						.col-sm-4.col-md-4.gallery-image: img(src=gallery._.heroImage.limit(680,680)).img-rounded
 						.col-sm-8.col-md-8: .row
 							each image in gallery.images
 								.col-xs-4.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
-					else
+					//-else
 						each image in gallery.images
-							.col-xs-6.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
+					//-		.col-xs-6.col-sm-4.col-md-3.gallery-image: img(src=image.limit(300,300)).img-rounded
 		else
 			h3.text-muted 还没有图片集。

@@ -14,10 +14,8 @@ block content
 					h1.xlarge= data.post.title
 					h3.lead.text-muted.text-right
 						if data.post.publishedDate
-							| 发表于 #{data.post._.publishedDate.format('YYYY-MM-DD')}
+							| 发表于#{data.post._.publishedDate.format('YYYY年M月D日')}
 				.post
-					if data.post.image.exists
-						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
 					!= data.post.content.full
 				if(data.post.file.exists)
 					hr
@@ -28,3 +26,6 @@ block content
 						b 大小：
 						span #{(data.post.file.size/1024).toFixed(2)}kb
 					a(class='btn btn-primary',href='/files/'+data.post.file.filename) 下载
+	#back
+		span.totop(onclick='javascript:scrollTo(0,0)') 回到顶部
+		a(href='/category/'+data.post.categories.name) 返回列表

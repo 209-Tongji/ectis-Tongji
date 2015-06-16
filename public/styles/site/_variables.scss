@@ -1,5 +1,7 @@
 // Override Bootstrap variables in this file, e.g.
-$mainColor: #3e90d9;
+$mainColor: rgba(95,165,225,.75);
+
+
 $font-size-base: 14px;
 $font-family-sans-serif: "Helvetica Neue","Microsoft Yahei",Helvetica, Arial, sans-serif;
 $font-family-base: "Helvetica Neue","Microsoft Yahei",Helvetica, Arial, sans-serif;
@@ -15,7 +17,7 @@ $navbar-default-bg:                transparent;
 $navbar-default-border:            transparent;
 
 // Navbar links
-$navbar-default-link-color:                #efefef;
+$navbar-default-link-color:                #444;
 $navbar-default-link-hover-color:          white;
 $navbar-default-link-hover-bg:             transparent;
 $navbar-default-link-active-color:         #fefefe;
@@ -24,8 +26,8 @@ $navbar-default-link-disabled-color:       #ccc;
 $navbar-default-link-disabled-bg:          transparent;
 
 // Navbar brand label
-$navbar-default-brand-color:               $navbar-default-link-color;
-$navbar-default-brand-hover-color:         lighten($navbar-default-brand-color, 10%);
+$navbar-default-brand-color:               #222;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%);
 $navbar-default-brand-hover-bg:            transparent;
 
 $navbar-default-toggle-hover-bg:           rgba(0,0,0,.5);
@@ -46,3 +48,13 @@ $link-color:darken($mainColor,35%);
 
 //** Padding between columns. Gets divided in half for the left and right.
 //$grid-gutter-width:         48px;
+
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           #ddd;
+$navbar-default-toggle-icon-bar-bg:        #fff;
+$navbar-default-toggle-border-color:       #ddd;
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            #333;
+$navbar-inverse-toggle-icon-bar-bg:         #000;
+$navbar-inverse-toggle-border-color:        #333;

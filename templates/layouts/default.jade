@@ -12,6 +12,10 @@ html
 		title= title || '同济大学电子商务交易与信息服务协同创新中心'
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
+		| <!--[if lt IE 8]>
+		| <link rel="stylesheet" type="text/css" href="/styles/ies.css" />
+		| <![endif]-->
+		
 		//- Customise the stylesheet for your site by editing /public/styles/site.less
 		//- All .less files will be automatically compiled and minified in production.
 		link(href="/styles/site.css", rel="stylesheet")
@@ -22,10 +26,10 @@ html
 
 		//- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
 		//- Safely remove this block if you are not targeting IE8
-		//-[if lt IE 9]
-			script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
-			script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
-		//-[endif]
+		|<!--[if lt IE 9]>
+		|	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		|	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		|<![endif]-->
 
 		//- Include template-specific stylesheets by extending the css block
 		block css

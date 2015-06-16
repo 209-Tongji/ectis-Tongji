@@ -13,7 +13,7 @@ var _ = require('underscore'),
 	keystone = require('keystone');
 
 var result;
-keystone.list('PostCategory').model.find().sort('-priority').where('type','单独页面').select('name').exec(function(err, data) {
+keystone.list('PostCategory').model.find().sort('-priority').where('type').ne('文档分类').select('name').exec(function(err, data) {
     result=data;
     console.log("Update Catogorieds");
 });

@@ -61,8 +61,6 @@ exports = module.exports = function(req, res) {
 	
 	// Load the posts
 	view.on('init', function(next) {
-        if(locals.data.category&&locals.data.category.type==='单独页面')//单独页面无posts
-            return next();
 		var q = keystone.list('Post').paginate({
 				page: req.query.page || 1,
 				perPage: 10,
@@ -75,6 +73,8 @@ exports = module.exports = function(req, res) {
 		if (locals.data.category) {
 			q.where('categories').in([locals.data.category]);
 		}
+		
+		
 		
 		q.exec(function(err, results) {
 			locals.data.posts = results;

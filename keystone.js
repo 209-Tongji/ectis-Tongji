@@ -19,8 +19,8 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
-    'mongo': 'mongodb://localhost/tjdzsw',
-
+    'mongo': 'mongodb://10.60.103.200/tjdzsw',
+	'port': 8080,
     'emails': 'templates/emails',
 	'compress':true,
 	'auto update': true,
@@ -28,10 +28,9 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 	'cookie secret': ';6%J>oH}N)d5n31l>I327!``bA/=`S$V5;,bAbxryhT8#M-<hS+>ZbPVT{-;)?JG',
-	
+
 	//admin ui
 	//'wysiwyg images':true,
-	'wysiwyg cloudinary images':true,
 	'wysiwyg images':true,
 	'wysiwyg additional':'blockquote fullscreen'
 	

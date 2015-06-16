@@ -2,39 +2,41 @@ extends ../layouts/default
 
 block intro
 	.container
-		h1.colortitle 联系我们
+		h1.colortitle-aligned 联系我们
 		
 block content
 	.container
-		.col-sm-8.col-md-6
-			h3 联系方式
-			p
-				b 校区:
-				|嘉定校区
-			p
-				b 地址:
-				|上海市曹安公路4800号智信楼
-			p
-				b 电话:
-				|（86）21-69583792
-			p
-				b 邮编:
-				|201804
-			p
-				b E-mail:
-				|zhagnxi1129@tongji.edu.cn
-			h3 交通指南
-			p 浦东机场出发：地铁2号线至江苏路换乘地铁11号线，至上海汽车城换乘陆安专线（北安线、安亭4路）至曹安公路绿苑路站。
-			p 虹桥机场出发：地铁2号线至江苏路换乘地铁11号线，至上海汽车城换乘陆安专线（北安线、安亭4路）至曹安公路绿苑路站。
-			p 上海火车站出发：地铁3号线或4号线至曹杨路站换乘地铁11号线，至上海汽车城换乘陆安专线（北安线、安亭4路）至曹安公路绿苑路站。
-			p 上海南站出发：地铁3号线至曹杨路站换乘地铁11号线，至上海汽车城换乘陆安专线（北安线、安亭4路）至曹安公路绿苑路站。
+		.row
+			.col-sm-12.col-md-6
+				h3 联系方式
+				p
+					b 校区:
+					|嘉定校区
+				p
+					b 地址:
+					|上海市曹安公路4800号智信楼
+				p
+					b 电话:
+					|（86）21-69583792
+				p
+					b 邮编:
+					|201804
+				p
+					b E-mail:
+					|dingzj@tongji.edu.cn
+			
+			.col-sm-12.col-md-6
+				h3 交通指南
+				p 浦东机场出发：地铁2号线至江苏路换乘地铁11号线，至上海汽车城换乘陆安专线（北安线、安亭4路）至曹安公路绿苑路站。
+				p 虹桥机场出发：地铁2号线至江苏路换乘地铁11号线，至上海汽车城换乘陆安专线（北安线、安亭4路）至曹安公路绿苑路站。
+				p 上海火车站出发：地铁3号线或4号线至曹杨路站换乘地铁11号线，至上海汽车城换乘陆安专线（北安线、安亭4路）至曹安公路绿苑路站。
+				p 上海南站出发：地铁3号线至曹杨路站换乘地铁11号线，至上海汽车城换乘陆安专线（北安线、安亭4路）至曹安公路绿苑路站。
 
-
-
+		
 		if enquirySubmitted
 			h3 感谢您的留言。
 		else
-			.col-sm-8.col-md-6
+			.col-sm-8.col-md-4.hidden
 				h3 给我们留言
 				form(method='post')
 					input(type='hidden', name='action', value='contact')
@@ -58,3 +60,4 @@ block content
 						textarea(name='message', placeholder='给我们留条消息...' rows=4).form-control= formData.message
 					.form-actions
 						button(type='submit').btn.btn-primary 发送
+		

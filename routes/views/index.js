@@ -27,7 +27,7 @@ exports = module.exports = function(req, res) {
                     .sort('-publishedDate')
                     .select('publishedDate title slug')
                     .where('categories').in([category.id])
-                    .limit('6')
+                    .limit('12')
                     .exec(function(err, data) {
                         category.briefPosts=data;
                         next(err);
@@ -43,7 +43,7 @@ exports = module.exports = function(req, res) {
     });
 
     view.on('init', function(next) {
-        var q = keystone.list('Gallery').model.find().select('name heroImage');
+        var q = keystone.list('Gallery').model.find().where('publish',true).sort('-publishedDate').select('name image');
         q.exec(function (err, result) {
             if (err || !result.length) {
                 return next(err);

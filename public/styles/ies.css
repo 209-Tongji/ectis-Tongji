@@ -1,0 +1,7 @@
+.navbar-nav > li{
+	zoom:1;
+	*display: inline!important;
+}
+.col-md-3{
+	width:22%!important;
+}

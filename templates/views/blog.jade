@@ -2,35 +2,49 @@ extends ../layouts/default
 
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		h2: a(href='/article/' + post.slug)= post.title
-		p.lead.text-muted
+		h3: a(href='/article/' + post.slug)= post.title
+		p.text-muted.text-right
 			if post.publishedDate
-				| 发布于 #{post._.publishedDate.format('YYYY-MM-DD')}
-		if post.image.exists
-			img(src=post._.image.fit(160,160)).img.pull-right
+				if post.categories.type=='文档分类'
+					| 发布于#{post._.publishedDate.format('YYYY年M月')}
+				else
+					| 发布于#{post._.publishedDate.format('YYYY年M月D日')}
 		p!= post.content.brief
 		if post.content.extended
 			p.read-more: a(href='/article/' + post.slug) 阅读更多...
 
+mixin coverpost(post)
+	.coverpost.col-md-6
+		a(href='/files/'+post.file.filename)
+			img(src='/files/images/'+post.image.filename)
+			.words!=post.content.brief
+			.caption
+				|下载：#{post.title}
+
 block intro
 	.container
-		h1.colortitle= data.category ? data.category.name : '创新中心日志页'
+		h1.colortitle-aligned= data.category ? data.category.name : '协同创新中心日志页'
 
 block content
 	.container: .row
-		.col-sm-8.col-md-9
+		.col-sm-8.col-md-9.aligned
 			if filters.category && !data.category
 				h3.text-muted 无效的类别.
 			else
-				if data.category&&data.category.type==='单独页面'
-					!= data.category.detail
-
-				else
+				if data.category&&data.category.type==='封面下载'
+					.blog
+						each post in data.posts.results
+							+coverpost(post)
+					
+				else	
+					if data.category&&data.category.type==='单独页面'
+						!= data.category.detail
+						
 					if data.posts.results.length
 						.blog
 							each post in data.posts.results
 								+post(post)
-
+	
 						if data.posts.totalPages > 1
 							ul.pagination
 								if data.posts.previous
@@ -45,10 +59,11 @@ block content
 								else
 									li.disabled: a(href='?page=' + data.posts.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
 					else
-						if data.category
-							h3.text-muted There are no posts in the category #{data.category.name}.
-						else
-							h3.text-muted There are no posts yet.
+						if data.category.type!=='单独页面'
+							if data.category
+								h3.text-muted 在#{data.category.name}里还没有文章。
+							else
+								h3.text-muted 还没有任何文章。
 		
 		if data.categories.length
 			.col-sm-4.col-md-3

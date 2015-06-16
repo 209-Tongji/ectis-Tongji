@@ -1,0 +1,78 @@
+extends ../layouts/default
+mixin post(post)
+	div.postlist
+		a.limitwidth.pull-left(href='/article/' + post.slug)= post.title
+		if post.publishedDate
+			p.pull-right.text-muted #{post._.publishedDate.format('YYYY-MM-DD')}
+
+
+block content
+	.container-fluid.index
+		.row:.col-md-12
+			h2.colortitle
+				a(href='/gallery') 中心图片
+			.gridimages.clearfix
+				if(!data.galleries.length)
+					p.text-muted 暂无内容
+				else	
+					- for(var i=0;i<data.galleries.length;i=i+3){
+						if data.galleries[i+1]
+							if i%2===0
+								.col-md-7
+									a(href='/gallery'): .image
+										img(src='/files/images/'+data.galleries[i].image.filename)
+										p #{data.galleries[i].name}
+								.col-md-5
+									if data.galleries[i+2]
+										.col-md-7.col-xs-7
+											a(href='/gallery'): .image
+												img(src='/files/images/'+data.galleries[i+1].image.filename)
+												p #{data.galleries[i+1].name}
+										.col-md-5.col-xs-5
+											a(href='/gallery'): .image
+												img(src='/files/images/'+data.galleries[i+2].image.filename)
+												p #{data.galleries[i+2].name}
+									else
+										.col-md-12
+											a(href='/gallery'): .image
+												img(src='/files/images/'+data.galleries[i+1].image.filename)
+												p #{data.galleries[i+1].name}
+							else
+								.col-md-5
+									if data.galleries[i+2]
+										.col-md-5.col-xs-5
+											a(href='/gallery'): .image
+												img(src='/files/images/'+data.galleries[i+1].image.filename)
+												p #{data.galleries[i+1].name}
+										.col-md-7.col-xs-7
+											a(href='/gallery'): .image
+												img(src='/files/images/'+data.galleries[i+2].image.filename)
+												p #{data.galleries[i+2].name}
+									else
+										.col-md-12
+											a(href='/gallery'): .image
+												img(src='/files/images/'+data.galleries[i+1].image.filename)
+												p #{data.galleries[i+1].name}
+								.col-md-7
+									a(href='/gallery'): .image
+										img(src='/files/images/'+data.galleries[i].image.filename)
+										p #{data.galleries[i].name}
+						else
+							.col-md-7
+								a(href='/gallery'): .image
+									img(src='/files/images/'+data.galleries[i].image.filename)
+									p #{data.galleries[i].name}
+	
+	
+					-}
+
+		.row
+			each cat in data.categories
+				.col-md-3
+					h2.colortitle
+						a(href='/category/'+cat.name) #{cat.name}
+					if(!cat.briefPosts.length)
+						p.text-muted 暂无内容
+					else
+						each post in cat.briefPosts
+							+post(post)
