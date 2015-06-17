@@ -33,3 +33,9 @@ node_modules
 # Ignore SVN
 .svn/
 *.bak
+
+# Ignore node modules
+node_modules/
+
+# Ignore update files
+public/files/
