@@ -20,6 +20,8 @@ keystone.init({
 	'views': 'templates/views',
 	'view engine': 'jade',
     'mongo': 'mongodb://10.60.103.200/tjdzsw',
+	//'sass': 'public',
+	//'mongo':'mongodb://127.0.0.1/tjdzsw',
 	'port': 8080,
     'emails': 'templates/emails',
 	'compress':true,

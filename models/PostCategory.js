@@ -15,7 +15,9 @@ PostCategory.add({
 	name: {label:'名称', type: String, required: true,unique:true,index:true},
     priority: {label:'优先级',type: Number ,required:true,index:true,default: 0,initial:true},
     type: {label: '类型', type: Types.Select, options: '文档分类, 单独页面,封面下载', default: '文档分类', initial:true,index:true},
-    detail: {label: '详细内容', type: Types.Html, wysiwyg: true, height: 400,dependsOn: { type: '单独页面' }}
+    detail: {label: '详细内容', type: Types.Html, wysiwyg: true, height: 400,dependsOn: { type: '单独页面' }},
+	group: {label:'群组', type: Number, default: 0}
+
 
 });
 
