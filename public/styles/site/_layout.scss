@@ -81,22 +81,12 @@ body,html{
 
 .colortitle{
   position: relative;
-  background-color:#ddfefe;
-  padding:.25em 0 .25em .825em;
+  padding:11px;
   font-weight: 300;
-  @include gradient-striped();
-  background-size: 40px 40px;
-  &:after{
-    content:'';
-    position: absolute;
-    width:.5em;
-    top:0;
-    bottom:0;
-
-    left:0;
-    background-color: $mainColor;
-    @include gradient-striped();
-    background-size: 10px 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.32);
+  background: #f9f9f9;
+  + *{
+	padding:0 11px;
   }
   a{
     color:lighten($text-color,5%);
@@ -109,24 +99,12 @@ body,html{
 
 .colortitle-aligned{
 	position: relative;
-	background-color:#ddfefe;
-	margin-left:-.825em;
-
-	padding:.25em 0 .25em .825em;
+	padding:11px;
 	font-weight: 300;
-	@include gradient-striped();
-	background-size: 40px 40px;
-	&:after{
-		content:'';
-		position: absolute;
-		width:.5em;
-		top:0;
-		bottom:0;
-
-		left:0;
-		background-color: $mainColor;
-		@include gradient-striped();
-		background-size: 10px 10px;
+  	box-shadow: 0 1px 3px rgba(0,0,0,.32);
+  	background: #f9f9f9;
+  	+ *{
+	  padding:0 11px;
 	}
 	a{
 		color:lighten($text-color,5%);
@@ -252,29 +230,55 @@ body,html{
   background: url(/images/bg.png) $mainColor;
   background-size: contain;
 }
-.navbar-nav > li:hover >ul{
-  display: block;
+
+.navbar-nav>li>ul> li {
+  display: inline;
+  > a {
+	padding: 11px 0;
+	display: block;
+	color: #444;
+  }
 }
-.navbar-nav > li > ul{
-  list-style: none;
-  padding:0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  display: none;
-  background:#f7f7f7;
-  >li{
-	display:inline;
-	>a{
-	  padding:11px 0;
-	  display: block;
-	  color:#444;
+@media (min-width: $grid-float-breakpoint-max) {
+  .navbar-nav > li:hover > ul {
+	display: block;
+  }
+  .navbar-nav > li > ul {
+	list-style: none;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	display: none;
+	background: #f7f7f7;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+	
+  }
+
+  .navbar-collapse {
+	background-color: #f7f7f7;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+  }
+}
+#back{
+  position:fixed;
+  right:18px;
+  bottom:12%;
+  background:white;
+  border:1px solid grey;
+  padding:9px 12px;
+  span, a{
+	display: block;
+	color:#777;
+	cursor: pointer;
+	&:hover{
+	  color:black;
+	  text-decoration: underline;
 	}
   }
 }
 
-.navbar-collapse {
-  background-color: #f7f7f7;
-  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+.pull-center{
+  text-align:center;
 }
