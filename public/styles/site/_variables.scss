@@ -26,7 +26,7 @@ $navbar-default-link-disabled-color:       #ccc;
 $navbar-default-link-disabled-bg:          transparent;
 
 // Navbar brand label
-$navbar-default-brand-color:               #222;
+$navbar-default-brand-color:               #fff;
 $navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%);
 $navbar-default-brand-hover-bg:            transparent;
 
@@ -58,3 +58,5 @@ $navbar-default-toggle-border-color:       #ddd;
 $navbar-inverse-toggle-hover-bg:            #333;
 $navbar-inverse-toggle-icon-bar-bg:         #000;
 $navbar-inverse-toggle-border-color:        #333;
+
+$navbar-padding-vertical: 31px;

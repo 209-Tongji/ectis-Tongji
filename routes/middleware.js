@@ -28,20 +28,28 @@ keystone.list('PostCategory').model.find().sort('-priority').where('type').ne('�
 
 exports.initLocals = function(req, res, next) {
 	
+	function ensureArrayLen(arr, len){
+		while(arr.length<=len){
+			arr.push([]);
+		}
+	}
 	var locals = res.locals;
 
-    locals.navLinks = [
-        { label: '中心首页',	href: '/' },
-    ];
+    locals.navLinks = [[
+        { label: '中心首页',	href: '/' }
+    ]];
 
     for(var i=0;i<result.length;i++)
     {
-        locals.navLinks.push({label:result[i].name ,href:'/category/'+result[i].name})
+		var data = result[i];
+		if(!data.group) data.group = 0;
+		ensureArrayLen(locals.navLinks, data.group);
+		console.log(data);
+        locals.navLinks[data.group].push({label:data.name ,href:'/category/'+data.name});
     }
-	locals.navLinks.push({ label: '联系我们', href: '/contact' })
-
-
-
+	
+	locals.navLinks.push([{ label: '联系我们', href: '/contact' }]);
+	
 	locals.user = req.user;
 	
 	next();

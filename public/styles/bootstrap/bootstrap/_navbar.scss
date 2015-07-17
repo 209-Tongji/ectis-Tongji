@@ -231,8 +231,8 @@
 
 
   > li > a {
-    padding-top:    20px;
-    padding-bottom: 20px;
+    padding-top:    34px;
+    padding-bottom: 34px;
     line-height: $line-height-computed;
   }
 
@@ -272,6 +272,7 @@
       > a {
         padding-top:    $navbar-padding-vertical;
         padding-bottom: $navbar-padding-vertical;
+		font-size: 1.3em;
       }
     }
 
@@ -419,10 +420,7 @@
 
       &:hover,
       &:focus {
-        color: $navbar-default-link-hover-color;
         @include box-shadow(inset 0 -3px $mainColor);
-        background-color: darken($mainColor,40%);
-		border-radius: 8px;  
       }
     }
     > .active > a {
