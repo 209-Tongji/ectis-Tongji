@@ -13,7 +13,7 @@ var _ = require('underscore'),
 	keystone = require('keystone');
 
 var result;
-keystone.list('PostCategory').model.find().sort('-priority').where('type').ne('文档分类').select('name').exec(function(err, data) {
+keystone.list('PostCategory').model.find().sort('-priority').where('type').ne('文档分类').exec(function(err, data) {
     result=data;
     console.log("Update Catogorieds");
 });
@@ -42,9 +42,10 @@ exports.initLocals = function(req, res, next) {
     for(var i=0;i<result.length;i++)
     {
 		var data = result[i];
+		console.log(data);
+
 		if(!data.group) data.group = 0;
 		ensureArrayLen(locals.navLinks, data.group);
-		console.log(data);
         locals.navLinks[data.group].push({label:data.name ,href:'/category/'+data.name});
     }
 	
