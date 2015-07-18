@@ -47,7 +47,7 @@ html
 				//- ... or completely change this header to suit your design.
 
 				div(role="navigation").navbar.navbar-default
-					.container-fluid
+					div
 						.navbar-header
 							button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
 								span.sr-only Toggle navigation
@@ -58,12 +58,13 @@ html
 						.collapse.navbar-collapse
 							ul.nav.navbar-nav.navbar-justify
 								each links in navLinks
-									li: a(href=links[0].href)= links[0].label
-										if(links.length>1)
-											-links.splice(0, 1)
-											ul.dropdown
-												each link in links
-													li: a(href=link.href)= link.label
+									if(links.length)
+										li: a(href=links[0].href)= links[0].label
+											if(links.length>1)
+												-links.splice(0, 1)
+												ul.dropdown
+													each link in links
+														li: a(href=link.href)= link.label
 			//- BODY
 			#body
 

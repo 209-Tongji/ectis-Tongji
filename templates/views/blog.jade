@@ -3,7 +3,7 @@ extends ../layouts/default
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
 		h3: a(href='/article/' + post.slug)= post.title
-		p.text-muted.text-right
+		p.text-muted.text-left
 			if post.publishedDate
 				if post.categories.type=='文档分类'
 					| 发布于#{post._.publishedDate.format('YYYY年M月')}

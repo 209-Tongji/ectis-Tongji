@@ -112,17 +112,13 @@ block content
 
 		.row
 			each cat in data.categories
-				.col-md-12
+				.col-md-6
 					h2.colortitle
 						a(href='/category/'+cat.name,alt=cat.name) #{cat.name}
 					if(!cat.briefPosts.length)
 						p.text-muted 暂无内容
 					else
-						.col-md-6
-							-for(var i=0;i<6;i++){
-								+post(cat.briefPosts[i])
-							-}
-						.col-md-6
-							-for(var i=6;i<cat.briefPosts.length;i++){
+						div
+							-for(var i=0;i<cat.briefPosts.length;i++){
 								+post(cat.briefPosts[i])
 							-}
