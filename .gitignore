@@ -42,3 +42,5 @@ public/files/
 
 # Ignore WebStorm config
 .idea
+
+keystone.js

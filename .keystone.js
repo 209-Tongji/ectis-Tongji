@@ -1,4 +1,4 @@
-// Simulate config options from your production environment by
+﻿// Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').load();
 
@@ -19,7 +19,8 @@ keystone.init({
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
-    'mongo': 'mongodb://10.60.103.200/dzsw',
+	//'sass': 'public',
+	'mongo':'mongodb://127.0.0.1/tjdzsw',
 	'port': 8080,
     'emails': 'templates/emails',
 	'compress':true,
