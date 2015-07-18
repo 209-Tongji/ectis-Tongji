@@ -83,8 +83,9 @@ body,html{
   position: relative;
   padding:11px;
   font-weight: 300;
-  box-shadow: 0 1px 3px rgba(0,0,0,.32);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.32), -6px 0 0 #E9F5F7 inset;
   background: #f9f9f9;
+  font-size:24px;
   + *{
 	padding:0 11px;
   }
@@ -98,11 +99,13 @@ body,html{
 }
 
 .colortitle-aligned{
+  
 	position: relative;
 	padding:11px;
 	font-weight: 300;
-  	box-shadow: 0 1px 3px rgba(0,0,0,.32);
+  	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.32), -6px 0 0 #E9F5F7 inset;
   	background: #f9f9f9;
+    font-size:24px;
   	+ *{
 	  padding:0 11px;
 	}
@@ -152,7 +155,9 @@ body,html{
 	margin: 6px auto;
 	box-shadow: 0 0 4px rgba(0,0,0,.8);
 	background: black;
-
+	a{
+	  cursor: default;
+	}
   [class*="col-"] {
     padding: 0!important;
 	  
@@ -281,4 +286,10 @@ body,html{
 
 .pull-center{
   text-align:center;
+}
+.blog{
+  h3>a{
+	color:#444;
+	font-size:1.2em;
+  }
 }

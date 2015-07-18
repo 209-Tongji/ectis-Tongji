@@ -5528,8 +5528,9 @@ body, html {
   position: relative;
   padding: 11px;
   font-weight: 300;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.32);
-  background: #f9f9f9; }
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.32), -6px 0 0 #E9F5F7 inset;
+  background: #f9f9f9;
+  font-size: 24px; }
   .colortitle + * {
     padding: 0 11px; }
   .colortitle a {
@@ -5542,8 +5543,9 @@ body, html {
   position: relative;
   padding: 11px;
   font-weight: 300;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.32);
-  background: #f9f9f9; }
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.32), -6px 0 0 #E9F5F7 inset;
+  background: #f9f9f9;
+  font-size: 24px; }
   .colortitle-aligned + * {
     padding: 0 11px; }
   .colortitle-aligned a {
@@ -5579,6 +5581,8 @@ body, html {
   margin: 6px auto;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
   background: black; }
+  .gridimages a {
+    cursor: default; }
   .gridimages [class*="col-"] {
     padding: 0 !important;
     height: 225px; }
@@ -5686,3 +5690,7 @@ body, html {
 
 .pull-center {
   text-align: center; }
+
+.blog h3 > a {
+  color: #444;
+  font-size: 1.2em; }
