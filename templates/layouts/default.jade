@@ -59,10 +59,10 @@ html
 							ul.nav.navbar-nav.navbar-justify
 								each links in navLinks
 									if(links.length)
-										li: a(href=links[0].href)= links[0].label
+										li: a(href=links[links.length-1].href)= links[links.length-1].label
 											if(links.length>1)
 												ul.dropdown
-													-for(var i=links.length-1;i>0;i--){
+													-for(var i=links.length-2;i>=0;i--){
 														li: a(href=links[i].href)= links[i].label
 													-}
 																						
