@@ -46,11 +46,19 @@ body,html{
 		display: inline-block;
 		overflow:hidden;
 		border-radius: 5px;
+	  	width:100%;
 		img {
 			box-shadow: 0 0 8px rgba(0, 0, 0, .3);
 			margin: 0 auto;
 			border: 1px solid #ccc;
 			border-radius: 5px;
+		  	width:100%;
+		}
+	  	.words{
+		  position: absolute;
+		  top: 0;
+		  color: white;
+		  padding: 32px;
 		}
 		.caption{
 			position: absolute;
