@@ -10,102 +10,84 @@ block content
 	.container.index
 		.row:.col-md-12
 			//h2.colortitle
-				a(href='/#') 中心图片
+				a 中心图片
 			.gridimages.clearfix
 				if(!data.galleries.length)
 					p.text-muted 暂无内容
 				else	
 					if data.galleries.length==4
 						.col-md-7.main
-							a(href='/#'): .image
+							a: .image
 								img(src='/files/images/'+data.galleries[0].image.filename)
-								p #{data.galleries[0].name}
 						.col-md-5
 							.col-md-5.col-xs-12
-								a(href='/#'): .image
+								a: .image
 									img(src='/files/images/'+data.galleries[1].image.filename)
-									p #{data.galleries[1].name}
 							.col-md-7.col-xs-12
-								a(href='/#'): .image
+								a: .image
 									img(src='/files/images/'+data.galleries[2].image.filename)
-									p #{data.galleries[2].name}
 							
 							.col-md-12.col-xs-12
-								a(href='/#'): .image
+								a: .image
 									img(src='/files/images/'+data.galleries[3].image.filename)
-									p #{data.galleries[3].name}
 					else if data.galleries.length==5
 						.col-md-5.main
-							a(href='/#'): .image
+							a: .image
 								img(src='/files/images/'+data.galleries[0].image.filename)
-								p #{data.galleries[0].name}
 						.col-md-7
 							.col-md-12
 								.col-md-5.col-xs-12
-									a(href='/#'): .image
+									a: .image
 										img(src='/files/images/'+data.galleries[1].image.filename)
-										p #{data.galleries[1].name}
 								.col-md-7.col-xs-12
-									a(href='/#'): .image
+									a: .image
 										img(src='/files/images/'+data.galleries[2].image.filename)
-										p #{data.galleries[2].name}
 							.col-md-12
 								.col-md-7.col-xs-12
-									a(href='/#'): .image
+									a: .image
 										img(src='/files/images/'+data.galleries[4].image.filename)
-										p #{data.galleries[4].name}
 								.col-md-5.col-xs-12
-									a(href='/#'): .image
+									a: .image
 										img(src='/files/images/'+data.galleries[3].image.filename)
-										p #{data.galleries[3].name}
 					else	
 						- for(var i=0;i<data.galleries.length;i=i+3){
 							if data.galleries[i+1]
 								if i%2===0
 									.col-md-7
-										a(href='/#'): .image
+										a: .image
 											img(src='/files/images/'+data.galleries[i].image.filename)
-											p #{data.galleries[i].name}
 									.col-md-5
 										if data.galleries[i+2]
 											.col-md-7.col-xs-12
-												a(href='/#'): .image
+												a: .image
 													img(src='/files/images/'+data.galleries[i+1].image.filename)
-													p #{data.galleries[i+1].name}
 											.col-md-5.col-xs-12
-												a(href='/#'): .image
+												a: .image
 													img(src='/files/images/'+data.galleries[i+2].image.filename)
-													p #{data.galleries[i+2].name}
 										else
 											.col-md-12
-												a(href='/#'): .image
+												a: .image
 													img(src='/files/images/'+data.galleries[i+1].image.filename)
-													p #{data.galleries[i+1].name}
 								else
 									.col-md-5
 										if data.galleries[i+2]
 											.col-md-5.col-xs-12
-												a(href='/#'): .image
+												a: .image
 													img(src='/files/images/'+data.galleries[i+1].image.filename)
-													p #{data.galleries[i+1].name}
 											.col-md-7.col-xs-12
-												a(href='/#'): .image
+												a: .image
 													img(src='/files/images/'+data.galleries[i+2].image.filename)
-													p #{data.galleries[i+2].name}
 										else
 											.col-md-12
-												a(href='/#'): .image
+												a: .image
 													img(src='/files/images/'+data.galleries[i+1].image.filename)
-													p #{data.galleries[i+1].name}
 									.col-md-7
-										a(href='/#'): .image
+										a: .image
 											img(src='/files/images/'+data.galleries[i].image.filename)
-											p #{data.galleries[i].name}
 							else
 								.col-md-12
-									a(href='/#'): .image
+									a: .image
 										img(src='/files/images/'+data.galleries[i].image.filename)
-										p #{data.galleries[i].name}
 		
 		
 						-}
@@ -122,3 +104,6 @@ block content
 							-for(var i=0;i<cat.briefPosts.length;i++){
 								+post(cat.briefPosts[i])
 							-}
+							div.postlist
+								a.limitwidth.pull-left(href='/category/'+cat.name,alt=cat.name) 查看更多...
+						

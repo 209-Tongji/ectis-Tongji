@@ -24,7 +24,7 @@ Gallery.add({
 			return '<img src="/files/images/'+file.filename+'" style="max-width: 300px"><p>'+'/files/images/'+file.filename+'</p>'
 		}
 	},
-	publish :{label:'是否可见',type:Boolean,default:true}
+	publish :{label:'是否可见',type:Boolean,default:false}
 
 });
 

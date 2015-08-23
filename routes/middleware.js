@@ -26,31 +26,35 @@ keystone.list('PostCategory').model.find().sort('-priority').where('type').ne('�
 	or replace it with your own templates / logic.
 */
 
-exports.initLocals = function(req, res, next) {
-	
-	function ensureArrayLen(arr, len){
-		while(arr.length<=len){
-			arr.push([]);
-		}
+function ensureArrayLen(arr, len){
+	while(arr.length<=len){
+		arr.push([]);
 	}
+}
+
+var navLinks;
+
+exports.initLocals = function(req, res, next) {
 	var locals = res.locals;
 
-    locals.navLinks = [[
-        { label: '中心首页',	href: '/' }
-    ]];
+	if(!navLinks) {
+		console.log('init nav Links');
+		navLinks = [];
+		navLinks.push([
+			{ label: '中心首页',	href: '/' }
+		]);
+		for(var i=0;i<result.length;i++)
+		{
+			var data = result[i];
+			if(!data.group) data.group = 0;
+			ensureArrayLen(navLinks, data.group);
+			navLinks[data.group].push({label:data.name ,href:'/category/'+data.name});
+		}
 
-    for(var i=0;i<result.length;i++)
-    {
-		var data = result[i];
-		console.log(data);
-
-		if(!data.group) data.group = 0;
-		ensureArrayLen(locals.navLinks, data.group);
-        locals.navLinks[data.group].push({label:data.name ,href:'/category/'+data.name});
-    }
+		navLinks.push([{ label: '联系我们', href: '/contact' }]);
+	}
 	
-	locals.navLinks.push([{ label: '联系我们', href: '/contact' }]);
-	
+	locals.navLinks = navLinks;
 	locals.user = req.user;
 	
 	next();

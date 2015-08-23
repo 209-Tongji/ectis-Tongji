@@ -6,12 +6,8 @@ mixin post(post)
 		p.text-muted.text-left
 			if post.publishedDate
 				if post.categories.type=='文档分类'
-					| 发布于#{post._.publishedDate.format('YYYY年M月')}
-				else
-					| 发布于#{post._.publishedDate.format('YYYY年M月D日')}
+					| #{post._.publishedDate.format('YYYY年M月D日')}
 		p!= post.content.brief
-		if post.content.extended
-			p.read-more: a(href='/article/' + post.slug) 阅读更多...
 
 mixin coverpost(post)
 	.coverpost.col-md-6
