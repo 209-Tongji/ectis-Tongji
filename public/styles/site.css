@@ -5639,15 +5639,15 @@ body, html {
         transition: all 0.5s ease-in;
         box-shadow: inset 0 0 0 1px black; }
       .gridimages [class*="col-"]
-.image:hover img {
+.image .hover img {
         transform: scale(1.1); }
       .gridimages [class*="col-"]
-.image:hover:after {
+.image .hover:after {
         background-color: #5ae9c6;
         background-color: rgba(90, 233, 198, 0.8);
         box-shadow: none; }
       .gridimages [class*="col-"]
-.image:hover p {
+.image .hover p {
         opacity: 1;
         transform: translate3d(0, 0, 0); }
 
